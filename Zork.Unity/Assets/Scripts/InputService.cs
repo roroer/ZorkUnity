@@ -15,7 +15,7 @@ public class InputService : MonoBehaviour, IInputService
         Assert.IsNotNull(InputField);
         Assert.IsFalse(string.IsNullOrEmpty(InputField.text));
 
-        InputReceived?.Invoke(this, InputField.text);
+        InputReceived?.Invoke(this, InputField.text.Trim());
 
         InputField.text = string.Empty;
     }

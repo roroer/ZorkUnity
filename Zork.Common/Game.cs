@@ -42,7 +42,10 @@ namespace Zork
             Commands = new Dictionary<string, Command>()
             {
                 { "QUIT", new Command("QUIT", new string[] { "QUIT", "Q", "BYE" }, Quit) },
-                { "LOOK", new Command("LOOK", new string[] { "LOOK", "L" }, game => Output.WriteLine($"{game.Player.Location}\n{game.Player.Location.Description}")) },
+                { "LOOK", new Command("LOOK", new string[] { "LOOK", "L" }, game => { 
+                    Output.WriteLine($"{game.Player.Location}", true);
+                    Output.WriteLine(game.Player.Location.Description); }) 
+                },
                 { "NORTH", new Command("NORTH", new string[] { "NORTH", "N" }, game => Move(game, Directions.North)) },
                 { "SOUTH", new Command("SOUTH", new string[] { "SOUTH", "S" }, game => Move(game, Directions.South)) },
                 { "EAST", new Command("EAST", new string[] { "EAST", "E"}, game => Move(game, Directions.East)) },

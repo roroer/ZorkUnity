@@ -6,7 +6,7 @@ namespace Zork
 {
     public interface IOutputService
     {
-        void WriteLine(string value);
+        void WriteLine(string value, bool isBold = false);
 
         void WriteLine(object value);
 
