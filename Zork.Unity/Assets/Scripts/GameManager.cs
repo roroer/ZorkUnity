@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Zork;
 using Newtonsoft.Json;
 using TMPro;
-using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,7 +25,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         TextAsset gameTextAsset = Resources.Load<TextAsset>(GameFilename);
-        Debug.Log(gameTextAsset.text);
 
         game = JsonConvert.DeserializeObject<Game>(gameTextAsset.text);
         game.Initialize(InputService, Outputservice);
